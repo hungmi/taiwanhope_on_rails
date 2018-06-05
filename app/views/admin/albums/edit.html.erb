@@ -1,0 +1,5 @@
+<%= link_to admin_albums_path(anchor: "album-#{@album.id}"), class: "btn btn-link" do %>
+  &#8592; <%= I18n.t('text.back') %>
+<% end %>
+<h1 class="h2"><%= I18n.t('text.edit') %><%= Album.model_name.human %></h1>
+<%= render "admin/albums/form", album: @album %>

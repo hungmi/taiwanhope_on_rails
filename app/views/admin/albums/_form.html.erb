@@ -1,0 +1,50 @@
+<%= form_with model: [:admin, album], local: true, class: "mb-5" do |f| %>
+  <div class="row">
+    <% if album.images.attached? %>
+      <div class="col-md-6">
+        <div class="row">
+          <% album.images.each do |image| %>
+            <%= render "admin/albums/album_img_card", image: image %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="col-md-6 <%= 'offset-md-6' unless album.images.attached? %>">
+      <div class="form-group <%= album.errors[:title].present? ? 'has-danger' : '' %>">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control #{album.errors[:title].present? ? 'is-invalid' : ''}" %>
+        <% if album.errors[:title].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= album.errors[:title].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+
+      <div class="form-group <%= album.errors[:images].present? ? 'has-danger' : '' %>">
+        <%= f.label :images %>
+        <%= f.file_field :images, class: "form-control previewable #{album.errors[:images].present? ? 'is-invalid' : ''}", multiple: true %>
+        <% if album.errors[:images].present? %>
+          <div class="invalid-feedback">
+            <%= album.errors[:images].join(", ") %>
+          </div>
+        <% end %>
+      </div>
+
+      <div id="newImagePreview" class="row mb-4" data-previewerClass="pb-1 pl-1 pr-0 col-3"></div>
+    
+      <div class="form-group <%= album.errors[:description].present? ? 'has-danger' : '' %>">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control #{album.errors[:description].present? ? 'is-invalid' : ''}" %>
+        <% if album.errors[:description].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= album.errors[:description].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <%= link_to I18n.t('text.cancel'), admin_albums_path, class: "btn btn-link text-danger" %>
+      <%= f.submit class: "btn btn-primary float-right" %>
+    </div>
+  </div>
+<% end %>

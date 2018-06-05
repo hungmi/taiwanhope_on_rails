@@ -1,0 +1,6 @@
+<%= link_to admin_albums_path(anchor: "album-#{@album.id}"), class: "btn btn-link" do %>
+  &#8592; <%= I18n.t('text.back') %>
+<% end %>
+<div class="row">
+	<%= render @album %>
+</div>

@@ -1,0 +1,34 @@
+<!-- Top menu -->
+<nav class="navbar" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">台灣家庭希望發展協會</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="top-navbar-1">
+			<ul class="nav navbar-nav navbar-right">						
+				<li class="<%= 'active' if current_page?('/') %>">
+					<a href="/"><span aria-hidden="true" class="icon_house"></span><br>首頁</a>
+				</li>
+				<li class="<%= 'active' if current_page?('/albums') %>">
+					<a href="/albums"><span aria-hidden="true" class="icon_camera"></span><br>活動剪影</a>
+				</li>
+				<li class="<%= 'active' if current_page?('/about') %>">
+					<a href="/about"><span aria-hidden="true" class="icon_comment"></span><br>關於我們</a>
+				</li>
+				<li class="<%= 'active' if current_page?('/love') %>">
+					<a href="/love"><span aria-hidden="true" class="icon_profile"></span><br>愛心捐助</a>
+				</li>
+				<li class="<%= 'active' if current_page?('/contact') %>">
+					<a href="/contact"><span aria-hidden="true" class="icon_mail"></span><br>聯絡我們</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

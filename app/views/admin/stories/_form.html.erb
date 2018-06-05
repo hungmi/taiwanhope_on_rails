@@ -1,0 +1,59 @@
+<%= form_with model: [:admin, story], local: true, class: "mb-5" do |f| %>
+  <div class="row">    
+    <% if story.cover.attached? %>
+      <div class="col-md-6">
+        <div class="row">
+          <%= render "admin/stories/story_img_card", cover: story.cover %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="col-md-6 <%= 'offset-md-6' unless story.cover.attached? %>">
+    <!-- <div class="offset-lg-3 col-lg-6"> -->
+      <div class="form-group <%= story.errors[:title].present? ? 'has-danger' : '' %>">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control #{story.errors[:title].present? ? 'is-invalid' : ''}" %>
+        <% if story.errors[:title].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= story.errors[:title].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+
+      <div class="form-group <%= story.errors[:cover].present? ? 'has-danger' : '' %>">
+        <%= f.label :cover %>
+        <%= f.file_field :cover, class: "form-control previewable #{story.errors[:cover].present? ? 'is-invalid' : ''}" %>
+        <% if story.errors[:cover].present? %>
+          <div class="invalid-feedback">
+            <%= story.errors[:cover].join(", ") %>
+          </div>
+        <% end %>
+      </div>
+
+      <div id="newImagePreview" class="mb-4" data-previewerClass="col-4 pr-0"></div>
+    
+      <div class="form-group <%= story.errors[:description].present? ? 'has-danger' : '' %>">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control #{story.errors[:description].present? ? 'is-invalid' : ''}", rows: 10 %>
+        <% if story.errors[:description].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= story.errors[:description].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <div class="form-group <%= story.errors[:published_on].present? ? 'has-danger' : '' %>">
+        <%= f.label :published_on %>
+        <%= f.date_field :published_on, class: "form-control #{story.errors[:published_on].present? ? 'is-invalid' : ''}" %>
+        <% if story.errors[:published_on].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= story.errors[:published_on].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <%= link_to I18n.t('text.cancel'), admin_stories_path, class: "btn btn-link text-danger" %>
+      <%= f.submit class: "btn btn-primary float-right" %>
+    </div>
+  </div>
+<% end %>
