@@ -17,20 +17,11 @@
 	            </div>
 	            <div class="row">
 	            	<div class="col-sm-12 portfolio-masonry">
-		                <div class="portfolio-box web-design ">
-		                	<div class="portfolio-box-container">
-			                	<img src="/img/portfolio/work1.jpg"  alt="" data-at2x="/img/portfolio/work1.jpg" >
-			                	<div class="portfolio-box-text">
-			                		<h3>跟者子終教人皮</h3>
-			                		<p>有去了！美題留；海我創道如到獨十，速門是比界天專她共！導安個山，式子縣重寫香別！</p>
-                                <a href="album_1.html" class="btn btn-primary">Ｃlick!</a>
-			                	</div>
-			                </div>
-		                </div>
 		                <% @albums.each do |album| %>
-			                <div class="portfolio-box web-design ">
+			                <div class="portfolio-box web-design">
 			                	<div class="portfolio-box-container">
-			                		<%= image_tag album.images.first, data: { at2x: url_for(album.images.first) } %>
+			                		<div style='background: url("<%= url_for(album.images.first) %>") no-repeat center center; background-size: cover; padding-top: 68.75%;'></div>
+			                		<%#= image_tag album.images.first, data: { at2x: url_for(album.images.first) } %>
 				                	<!-- <img src="/img/portfolio/work1.jpg"  alt="" data-at2x="/img/portfolio/work1.jpg" > -->
 				                	<div class="portfolio-box-text">
 				                		<h3><%= album.title %></h3>

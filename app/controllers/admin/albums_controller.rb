@@ -63,7 +63,7 @@ class Admin::AlbumsController < AdminController
 
     def set_search
       @q = Album.ransack(params[:q])
-      @nav_search_symbol = :id_eq
+      @nav_search_symbol = :title_or_description_cont
       @nav_search_placeholder = nil
     end
 

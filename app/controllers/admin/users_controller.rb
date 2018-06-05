@@ -47,8 +47,10 @@ class Admin::UsersController < AdminController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    flash[:success] = I18n.t('flash.destroy_success')
+    unless User.admin.size > 1
+      @user.destroy
+      flash[:success] = I18n.t('flash.destroy_success')
+    end
     redirect_to admin_users_url
   end
 
@@ -62,7 +64,7 @@ class Admin::UsersController < AdminController
 
     def set_search
       @q = User.ransack(params[:q])
-      @nav_search_symbol = :id_eq
+      @nav_search_symbol = :name_cont
       @nav_search_placeholder = nil
     end
 
