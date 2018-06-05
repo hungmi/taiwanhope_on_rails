@@ -13,11 +13,11 @@
     
       <div class="form-group <%= user.errors[:role].present? ? 'has-danger' : '' %>">
         <%= f.label :role %>
-        <%= f.text_field :role, class: "form-control #{user.errors[:role].present? ? 'is-invalid' : ''}" %>
+        <%= f.collection_select :role, I18n.t("activerecord.user_role"), :first, :last, {}, class: "form-control #{user.errors[:role].present? ? 'is-invalid' : ''}" %>
         <% if user.errors[:role].present? %>
-    	    <div class="invalid-feedback">
-    	      <%= user.errors[:role].join(", ") %>
-    	    </div>
+          <div class="invalid-feedback">
+            <%= user.errors[:role].join(", ") %>
+          </div>
         <% end %>
       </div>
     
