@@ -18,6 +18,7 @@ zh-TW:
     clear: 清除
     filter:
       title_or_description_cont: 標題或內文的關鍵字
+      name_cont: 名稱關鍵字
       id_eq: ID 等於
   flash:
     create_success: 建立成功。
