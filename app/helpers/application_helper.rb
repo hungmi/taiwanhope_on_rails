@@ -1,6 +1,6 @@
 module ApplicationHelper
   def meta_title
-    @page_title.present? ? '#{@page_title} | 鴻妍搏命' : '鴻妍搏命工作室'
+    @page_title.present? ? '#{@page_title} | 台灣家庭希望' : '台灣家庭希望發展協會'
   end
 
   def notice_message(opts = {})
