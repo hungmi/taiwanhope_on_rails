@@ -10,7 +10,6 @@
 	          <%= story.title %>
 	        <% else %>
 	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
 	        <% end %>
 	      </p>
 		  </li>
@@ -23,7 +22,6 @@
 	          <%= image_tag story.cover, class: "img-fluid-width" %>
 	        <% else %>
 	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
 	        <% end %>
 	      </p>
 		  </li>
@@ -31,13 +29,13 @@
 		    <div class="d-flex w-100 justify-content-between">
 		      <h5 class="mb-1"><%= Story.human_attribute_name("description") %></h5>
 		    </div>
-		    <p class="mb-1">
-		    	<% if story.description.present? %>
-	          <%= simple_format story.description %>
-	        <% else %>
-	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
-	        <% end %>
+	    	<% if story.description.present? %>
+          <%= simple_format story.description, class: "mb-1" %>
+        <% else %>
+			    <p class="mb-1">
+  	        <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
+  	      </p>
+        <% end %>
 	      </p>
 		  </li>
 		  <li class="list-group-item flex-column align-items-start">
@@ -49,7 +47,6 @@
 	          <%= story.published_on %>
 	        <% else %>
 	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
 	        <% end %>
 	      </p>
 		  </li>

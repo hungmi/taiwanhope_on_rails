@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 	before_action :skip_pundit
 
   def home
+  	@stories = Story.all.order(published_on: :desc, id: :desc)
   end
 
   def about

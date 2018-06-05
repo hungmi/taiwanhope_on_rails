@@ -10,7 +10,6 @@
 	          <%= album.title %>
 	        <% else %>
 	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
 	        <% end %>
 	      </p>
 		  </li>
@@ -18,14 +17,13 @@
 		    <div class="d-flex w-100 justify-content-between">
 		      <h5 class="mb-1"><%= Album.human_attribute_name("description") %></h5>
 		    </div>
-		    <p class="mb-1">
-		    	<% if album.description.present? %>
-	          <%= album.description %>
-	        <% else %>
-	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
-	        <% end %>
-	      </p>
+	    	<% if album.description.present? %>
+          <%= simple_format album.description, class: "mb-1" %>
+        <% else %>
+	    		<p class="mb-1">
+          	<span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
+          </p>
+        <% end %>
 		  </li>
 		  <li class="list-group-item flex-column align-items-start">
 		    <div class="d-flex w-100 justify-content-between">
@@ -42,7 +40,6 @@
 	          </div>
 	        <% else %>
 	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
-	          <span class="badge badge-pill badge-warning"><%= I18n.t("text.hint") %></span>
 	        <% end %>
 	      </p>
 		  </li>

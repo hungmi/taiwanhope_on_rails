@@ -35,7 +35,7 @@
     
       <div class="form-group <%= album.errors[:description].present? ? 'has-danger' : '' %>">
         <%= f.label :description %>
-        <%= f.text_field :description, class: "form-control #{album.errors[:description].present? ? 'is-invalid' : ''}" %>
+        <%= f.text_area :description, class: "form-control #{album.errors[:description].present? ? 'is-invalid' : ''}", rows: 10 %>
         <% if album.errors[:description].present? %>
     	    <div class="invalid-feedback">
     	      <%= album.errors[:description].join(", ") %>

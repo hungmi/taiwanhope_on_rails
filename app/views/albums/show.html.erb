@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+<link rel="stylesheet" href="/css/gallery-grid.css">
+<div class="page-title-container">
+    <div class="container">
+        <div class="row">
+            <div class=" page-title wow fadeIn text-left">
+                
+                <h1>活動剪影！</h1>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container gallery-container">
+
+    <div class="tz-gallery">
+
+        <div class="row">
+            <% @album.images.each do |image| %>
+                <div class="col-sm-6 col-md-3 ">
+                    <a class="lightbox" href= "<%= url_for(image) %>">
+                        <div style='background: url("<%= url_for(image) %>") no-repeat center center; background-size: cover; padding-top: 75%;'></div>
+                        <!-- <img src=  "assets/img/images/park.jpg" alt="Park"> -->
+                    </a>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<!-- Meet Our Team -->
+<div class="team-container">
+	<div class="container">
+    </div>
+</div>
+<!-- Testimonials -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
