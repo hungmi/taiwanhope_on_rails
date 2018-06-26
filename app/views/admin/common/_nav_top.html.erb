@@ -11,6 +11,9 @@
         <a class="nav-link py-sm-2 py-3" href="/admin/<%= singular_name.pluralize %>"><%= I18n.t("activerecord.models.#{singular_name}") %></a>
       </li>
       <% end %>
+      <li class='nav-item'>
+        <a class="nav-link py-sm-2 py-3" href="/">返回前台</a>
+      </li>
     </ul>
     <%= search_form_for [:admin, @q], class: "form-row align-items-center my-2 my-lg-0" do |f| %>
       <div class="col-auto">
