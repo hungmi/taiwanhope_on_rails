@@ -28,7 +28,7 @@
     
 }
 
-.tz-gallery .lightbox img, .tz-gallery .lightbox div {
+.tz-gallery .lightbox img {
     width: 100%;
     margin-bottom: 30px;
     transition: 0.2s ease-in-out;

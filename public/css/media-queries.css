@@ -98,7 +98,7 @@
 	
 	/* logo */
     .navbar-brand {
-    	background-image: url(../img/logo2.svg) !important; background-repeat: no-repeat !important; background-size: 140px 135px !important;
+    	background-image: url(../img/logo.svg) !important; background-repeat: no-repeat !important; background-size: 250px 135px !important;
     }
 	
 }

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   	get 'contact'
   	get 'love'
   end
-  get 'admin', to: redirect('/')
+  get 'admin', to: redirect('/admin/stories')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	namespace :admin do
 		resources :stories

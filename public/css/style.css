@@ -192,9 +192,9 @@ ul.navbar-nav li.active .dropdown-menu > .active > a:focus { background: #fe503e
 .navbar>.container .navbar-brand { margin-left: 0; }
 
 .navbar-brand {
-	width: 173px;
+	width: 250px;
 	height: 135px;
-	background: url(../img/logo2.svg) left center no-repeat;
+	background: url(../img/logo.svg) left center no-repeat;
 	text-indent: -99999px;
 }
 
@@ -542,6 +542,7 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: left;
+    
 }
 
 .about-us-text h3 {
@@ -839,3 +840,4 @@ padding: 10px 0px 0px 0px;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
