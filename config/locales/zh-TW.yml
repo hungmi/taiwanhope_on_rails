@@ -10,7 +10,7 @@ zh-TW:
     destroy: 刪除
     back: 返回
     hint: 提示
-    attr_no_value: 尚未填寫
+    attr_no_value: 尚無資料
     confirm_destroy: 確認刪除？
     search_result: 搜尋結果
     filter: 篩選器

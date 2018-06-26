@@ -18,7 +18,7 @@
 		      <h5 class="mb-2"><%= Story.human_attribute_name("cover") %></h5>
 		    </div>
 		    <p class="mb-1">
-		    	<% if story.cover.present? %>
+		    	<% if story.cover.attached? %>
 	          <%= image_tag story.cover, class: "img-fluid-width" %>
 	        <% else %>
 	          <span class="text-muted"><%= I18n.t("text.attr_no_value") %></span>
