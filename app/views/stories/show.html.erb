@@ -20,7 +20,9 @@
               <p>
                   日期： <%= @story.date %>
               </p>
-              <%= image_tag @story.cover, style: "margin:auto; max-height:600px;" %>
+              <% if @story.cover.attached? %>
+                <%= image_tag @story.cover, style: "margin:auto; max-height:600px;" %>
+              <% end %>
               <%= simple_format @story.description %>
           </div>
       </div>
