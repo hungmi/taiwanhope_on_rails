@@ -6,7 +6,7 @@ set :repo_url, 'https://github.com/hungmi/taiwanhope_on_rails.git' # Edit this t
 set :branch, :master
 set :deploy_to, '/home/deploy/railsapp/taiwanhope_on_rails'
 set :linked_files, %w{config/database.yml config/master.key}
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system storage/}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system storage}
 set :bundle_binstubs, nil
 set :keep_releases, 5
 set :rbenv_type, :user # or :system, depends on your rbenv setup
