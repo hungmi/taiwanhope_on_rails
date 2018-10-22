@@ -67,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bullet', group: [:development]
-gem 'bootstrap', '~> 4.0.0'
+gem "bootstrap", ">= 4.1.2"
 gem 'awesome_rails_console'
 gem 'pundit'
 gem 'sidekiq'
@@ -77,3 +77,4 @@ gem 'mini_magick', '~> 4.8'
 gem 'aws-sdk-s3', require: false
 gem 'bcrypt', '~> 3.1.7'
 gem 'redis', '~> 4.0'
+gem "rubyzip", ">= 1.2.2"
