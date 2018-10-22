@@ -2,7 +2,7 @@
 lock '3.11.0' # Edit this to match your capistrano version
 
 set :application, 'taiwanhope_on_rails'
-set :repo_url, 'git@github.com:hungmi/taiwanhope_on_rails.git' # Edit this to match your repository
+set :repo_url, 'https://github.com/hungmi/taiwanhope_on_rails.git' # Edit this to match your repository
 set :branch, :master
 set :deploy_to, '/home/deploy/railsapp/taiwanhope_on_rails'
 set :linked_files, %w{config/database.yml config/master.key}
@@ -42,8 +42,7 @@ namespace :deploy do
       on roles(:app) do
         execute "mkdir #{shared_path}/config -p"
         upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
-        upload! StringIO.new(File.read("config/application.yml")), "#{shared_path}/config/application.yml"
-        upload! StringIO.new(File.read("config/secrets.yml")), "#{shared_path}/config/secrets.yml"
+        upload! StringIO.new(File.read("config/master.key")), "#{shared_path}/config/master.key"
       end
     end
 

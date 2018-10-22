@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: taiwanhope_on_rails_production
-  username: taiwanhope_on_rails
-  password: <%= ENV['TAIWANHOPE_ON_RAILS_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: <%= Rails.application.credentials.dig(:db_password) %>
