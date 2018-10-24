@@ -64,7 +64,7 @@ class Admin::StoriesController < AdminController
     def set_search
       @q = Story.ransack(params[:q])
       @nav_search_symbol = :title_or_description_cont
-      @nav_search_placeholder = nil
+      @nav_search_placeholder = "搜尋消息標題或內文"
     end
 
     # Only allow a trusted parameter "white list" through.
