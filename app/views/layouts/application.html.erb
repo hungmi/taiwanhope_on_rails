@@ -39,7 +39,7 @@
   <body>
     <%= render "partials/nav" %>
     <%= yield %>
-    <% if action_name.in?(["home", "about", "love"]) || current_page?(controller: "stories", action: "show") %>
+    <% if action_name.in?(["home", "about", "love"]) || current_page?(controller: "stories", action: "index") || @story.present? %>
         <%= render "partials/testimonial" %>
     <% end %>
     <%= render "partials/footer" %>
